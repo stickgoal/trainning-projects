@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f411ed61-8370-4928-838d-d8029421e48e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/core/LinkStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/core/LinkVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/core/Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/core/SimpleCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/dal/PageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/dal/impl/PageFileRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/model/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/util/CharsetDetector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/readme.md" afterDir="false" />
-    </list>
+    <list default="true" id="f411ed61-8370-4928-838d-d8029421e48e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,14 +33,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="15" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="15" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -77,18 +65,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/model/Page.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -162,14 +138,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/dal/impl/PageFileRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -226,7 +212,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="311" />
     <option name="y" value="88" />
     <option name="width" value="1395" />
@@ -343,6 +329,7 @@
       <recent name="me.maiz.trainningproject.util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\trainning-projects\simplecrawler" />
       <recent name="D:\workspace\trainning-projects\simplecrawler\src" />
     </key>
   </component>
@@ -388,16 +375,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540972603918</updated>
-      <workItem from="1540972609716" duration="5096000" />
+      <workItem from="1540972609716" duration="5365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5096000" />
+    <option name="totallyTimeSpent" value="5365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
@@ -430,14 +416,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -543,10 +521,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/me/maiz/trainningproject/dal/impl/PageFileRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
