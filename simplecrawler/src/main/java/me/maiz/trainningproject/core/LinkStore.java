@@ -48,7 +48,7 @@ public class LinkStore {
      * @param unvisitedLinks
      */
     public void addUnvisitedAll(Set<String> unvisitedLinks){
-        logger.info("添加一批URL到未访问链接队列中{}",unvisitedLinks);
+        logger.info("添加一批URL到未访问链接队列中{}",unvisitedLinks.size());
        for (String u:unvisitedLinks){
            addUnvisited(u);
        }
