@@ -1,7 +1,6 @@
-package me.maiz.trainningproject.dal.impl;
+package me.maiz.ittrainning.simplecrawlerboot.dal;
 
 import com.google.common.io.Files;
-import me.maiz.trainningproject.dal.NewsRepo;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,8 +15,8 @@ public class NewsRepoImpl implements NewsRepo {
     private static final String FILE_LOCATION = "d:/tmp/news/";
 
     @Override
-    public void save(List newsList,String configName) throws IOException {
-        String fileName = FILE_LOCATION+configName+"_"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"))+"_news.txt";
+    public void save(List newsList) throws IOException {
+        String fileName = FILE_LOCATION+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"))+"_news.txt";
         File file = new File(fileName);
         if (!file.exists()){
             Files.createParentDirs(file);
@@ -28,9 +27,6 @@ public class NewsRepoImpl implements NewsRepo {
             bw.write(news.toString());
             bw.newLine();
         }
-        bw.flush();
-
-        bw.close();
 
     }
 }

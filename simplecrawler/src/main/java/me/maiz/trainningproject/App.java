@@ -1,8 +1,9 @@
 package me.maiz.trainningproject;
 
-import me.maiz.trainningproject.adapter.CSDNNewsAdapter;
-import me.maiz.trainningproject.adapter.InfoQNewsAdapter;
+import me.maiz.trainningproject.core.SimpleNewsCrawler;
+import me.maiz.trainningproject.module.CSDNNewsAdapter;
 import me.maiz.trainningproject.core.SimpleCrawler;
+import me.maiz.trainningproject.module.NewsCrawlConfig;
 
 import java.io.IOException;
 
@@ -18,9 +19,19 @@ public class App
 //        SimpleCrawler crawler = new SimpleCrawler();
 //        crawler.startCrawlingWith(new String[]{"http://news.baidu.com/"});
 
-        SimpleCrawler crawlerTechNews = new SimpleCrawler();
+        SimpleNewsCrawler simpleNewsCrawler = new SimpleNewsCrawler();
         try {
-            crawlerTechNews.startCrawlingWith(new CSDNNewsAdapter());
+//            simpleNewsCrawler.startCrawlingWith(NewsCrawlConfig.CSDN_NEWS_CONFIG);
+            NewsCrawlConfig crawlConfig = NewsCrawlConfig.builder().crawlTimesMax(10)
+                    .seedsUrls(new String[]{"http://www.ftchinese.com"})
+                    .newLinkSelector(null)
+                    .targetElementSelector(new String[]{".items>.item-container"})
+                    .titleSelector(".item-headline-link")
+                    .urlSelector(".item-headline-link")
+                    .introSelector(".item-lead")
+                    .contentBodySelector("#story-body-container")
+                    .build();
+            simpleNewsCrawler.startCrawlingWith(NewsCrawlConfig.THEPAPER_NEWS_CONFIG);
         } catch (IOException e) {
             e.printStackTrace();
         }

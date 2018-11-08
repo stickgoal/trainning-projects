@@ -1,10 +1,11 @@
-package me.maiz.trainningproject.core;
+package me.maiz.ittrainning.simplecrawlerboot.service.crawler;
 
-import me.maiz.trainningproject.model.Page;
+import me.maiz.ittrainning.simplecrawlerboot.domain.Page;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import java.util.Set;
 /**
  * DOM解析器
  */
+@Component("parser")
 public class Parser {
 
     private Logger logger = LoggerFactory.getLogger(Parser.class);
@@ -62,20 +64,6 @@ public class Parser {
             }
         }
         return elements;
-    } /**
-     * 得到需要的DOM元素
-     * @param page 指定的页面
-     * @param cssSelector 指定的css选择器,可以有多个
-     * @return
-     */
-    public Element getTargetElement(Page page, String... cssSelector){
-
-        Elements targetElements = getTargetElements(page, cssSelector);
-        if(targetElements!=null&&targetElements.size()>0) {
-            return targetElements.get(0);
-        }else{
-            return null;
-        }
     }
 
 }

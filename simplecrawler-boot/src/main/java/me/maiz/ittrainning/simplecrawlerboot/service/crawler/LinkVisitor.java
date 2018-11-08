@@ -1,12 +1,10 @@
-package me.maiz.trainningproject.core;
+package me.maiz.ittrainning.simplecrawlerboot.service.crawler;
 
-import me.maiz.trainningproject.model.Page;
+import me.maiz.ittrainning.simplecrawlerboot.domain.Page;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -15,15 +13,15 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-import static org.apache.http.util.EntityUtils.toByteArray;
 
 /**
  * 请求访问器，负责访问指定请求
  */
+@Component("linkVisitor")
 public class LinkVisitor {
 
     private Logger logger = LoggerFactory.getLogger(LinkVisitor.class);
@@ -35,19 +33,17 @@ public class LinkVisitor {
      * @return
      */
     public Page visit(String url) {
-        logger.info(" 访问：{}",url);
         Page page = null;
         //准备Http请求
         RequestConfig config = RequestConfig.custom()
-                .setConnectTimeout(50000)
-                .setConnectionRequestTimeout(10000)
-                .setSocketTimeout(50000)
+                .setConnectTimeout(5000)
+                .setConnectionRequestTimeout(1000)
+                .setSocketTimeout(5000)
                 .build();
 
         CloseableHttpClient httpClient =HttpClients.custom()
                 .setRetryHandler(new DefaultHttpRequestRetryHandler())
                 .setDefaultRequestConfig(config)
-                .setUserAgent("Mozilla/5.0(Windows;U;Windows NT 5.1;en-US;rv:0.9.4)")
                 .build();
 
         HttpUriRequest request = RequestBuilder.get(url).build();
@@ -66,7 +62,6 @@ public class LinkVisitor {
             }
         } catch (IOException e) {
             logger.warn("访问"+url+"时出现IO异常",e);
-            throw new RuntimeException("访问"+url+"时出现IO异常");
         }finally {
             try {
                 httpClient.close();

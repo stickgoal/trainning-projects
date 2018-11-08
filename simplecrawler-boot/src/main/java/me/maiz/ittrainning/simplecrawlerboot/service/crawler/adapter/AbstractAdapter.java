@@ -1,6 +1,6 @@
-package me.maiz.trainningproject.adapter;
+package me.maiz.ittrainning.simplecrawlerboot.service.crawler.adapter;
 
-import me.maiz.trainningproject.core.Parser;
+import me.maiz.ittrainning.simplecrawlerboot.service.crawler.Parser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

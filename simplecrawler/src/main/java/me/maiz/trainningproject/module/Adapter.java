@@ -1,4 +1,4 @@
-package me.maiz.trainningproject.adapter;
+package me.maiz.trainningproject.module;
 
 import me.maiz.trainningproject.core.CrawlConfig;
 import me.maiz.trainningproject.model.Page;
@@ -15,4 +15,5 @@ public interface Adapter {
     Set<String> getNewLinks(Page page);
 
     void persist() throws IOException;
+
 }

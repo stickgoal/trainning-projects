@@ -1,16 +1,12 @@
-package me.maiz.trainningproject.adapter;
+package me.maiz.trainningproject.module;
 
 import me.maiz.trainningproject.core.CrawlConfig;
-import me.maiz.trainningproject.core.Parser;
-import me.maiz.trainningproject.core.SimpleCrawler;
 import me.maiz.trainningproject.dal.NewsRepo;
 import me.maiz.trainningproject.dal.impl.NewsRepoImpl;
 import me.maiz.trainningproject.model.BaiduNews;
 import me.maiz.trainningproject.model.Page;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,9 +19,11 @@ public class BaiduNewsParserAdapter extends AbstractAdapter {
 
     private NewsRepo repo = new NewsRepoImpl();
 
+
+
     @Override
     public CrawlConfig getConfig() {
-    return CrawlConfig.builder().crawlTimesMax(100).seedsUrl(new String[]{"http://news.baidu.com/"}).build();
+    return CrawlConfig.builder().crawlTimesMax(100).seedsUrls(new String[]{"http://news.baidu.com/"}).build();
     }
 
     @Override
@@ -45,6 +43,7 @@ public class BaiduNewsParserAdapter extends AbstractAdapter {
 
     @Override
     public void persist() throws IOException {
-        repo.save(baiduNewsList);
+        repo.save(baiduNewsList,"默认");
     }
+
 }

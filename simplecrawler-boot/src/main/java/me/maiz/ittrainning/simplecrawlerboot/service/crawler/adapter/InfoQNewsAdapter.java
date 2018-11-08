@@ -1,22 +1,20 @@
-package me.maiz.trainningproject.adapter;
+package me.maiz.ittrainning.simplecrawlerboot.service.crawler.adapter;
 
-import me.maiz.trainningproject.core.CrawlConfig;
-import me.maiz.trainningproject.core.Parser;
-import me.maiz.trainningproject.dal.NewsRepo;
-import me.maiz.trainningproject.dal.impl.NewsRepoImpl;
-import me.maiz.trainningproject.model.BaiduNews;
-import me.maiz.trainningproject.model.Page;
-import me.maiz.trainningproject.model.TechNews;
+import me.maiz.ittrainning.simplecrawlerboot.dal.NewsRepo;
+import me.maiz.ittrainning.simplecrawlerboot.dal.NewsRepoImpl;
+import me.maiz.ittrainning.simplecrawlerboot.domain.Page;
+import me.maiz.ittrainning.simplecrawlerboot.domain.TechNews;
+import me.maiz.ittrainning.simplecrawlerboot.service.crawler.CrawlConfig;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Component("infoQNewsAdapter")
 public class InfoQNewsAdapter extends AbstractAdapter {
 
     NewsRepo newsRepo = new NewsRepoImpl();

@@ -1,9 +1,11 @@
-package me.maiz.trainningproject.core;
+package me.maiz.ittrainning.simplecrawlerboot.service.crawler;
 
-import me.maiz.trainningproject.module.Adapter;
-import me.maiz.trainningproject.model.Page;
+import me.maiz.ittrainning.simplecrawlerboot.domain.Page;
+import me.maiz.ittrainning.simplecrawlerboot.service.crawler.adapter.Adapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.Set;
@@ -11,23 +13,26 @@ import java.util.Set;
 /**
  * 简单爬虫实现
  */
+@Component("crawler")
 public class SimpleCrawler {
 
     private static  final Logger logger = LoggerFactory.getLogger(SimpleCrawler.class);
 
 
+    @Autowired
     //链接访问器
     private LinkVisitor visitor = new LinkVisitor();
 
+    @Autowired
     //页面解析器
-    private Parser parser = new Parser();
+    private Parser parser ;
 
 
     /**
      * 使用指定的种子开始爬取
      */
     public void startCrawlingWith(Adapter adapter) throws IOException {
-        LinkStore linkStore = new LinkStore(adapter.getConfig().getSeedsUrls());
+        LinkStore linkStore = new LinkStore(adapter.getConfig().getSeedsUrl());
 
         while(canCrawl(linkStore,adapter.getConfig().getCrawlTimesMax())){
             String toVisitURL = linkStore.pollUnVisited();
