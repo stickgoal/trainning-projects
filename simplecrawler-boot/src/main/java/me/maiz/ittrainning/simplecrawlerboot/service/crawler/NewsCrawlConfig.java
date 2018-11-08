@@ -45,7 +45,7 @@ public class NewsCrawlConfig {
     public static final NewsCrawlConfig THEPAPER_NEWS_CONFIG = NewsCrawlConfig.builder()
             .configName("澎湃新闻抓取")
             .seedsUrls(new String[]{"https://www.thepaper.cn/"})
-            .crawlTimesMax(5)
+            .crawlTimesMax(1)
             .targetElementSelector(new String[]{".news_li",".pdtt_rt"})
             .titleSelector("h2>a")
             .urlSelector("h2>a")
