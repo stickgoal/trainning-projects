@@ -17,7 +17,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-
 /**
  * 请求访问器，负责访问指定请求
  */
@@ -33,17 +32,19 @@ public class LinkVisitor {
      * @return
      */
     public Page visit(String url) {
+        logger.info(" 访问：{}",url);
         Page page = null;
         //准备Http请求
         RequestConfig config = RequestConfig.custom()
-                .setConnectTimeout(5000)
-                .setConnectionRequestTimeout(1000)
-                .setSocketTimeout(5000)
+                .setConnectTimeout(50000)
+                .setConnectionRequestTimeout(10000)
+                .setSocketTimeout(50000)
                 .build();
 
         CloseableHttpClient httpClient =HttpClients.custom()
                 .setRetryHandler(new DefaultHttpRequestRetryHandler())
                 .setDefaultRequestConfig(config)
+                .setUserAgent("Mozilla/5.0(Windows;U;Windows NT 5.1;en-US;rv:0.9.4)")
                 .build();
 
         HttpUriRequest request = RequestBuilder.get(url).build();
@@ -62,6 +63,7 @@ public class LinkVisitor {
             }
         } catch (IOException e) {
             logger.warn("访问"+url+"时出现IO异常",e);
+            throw new RuntimeException("访问"+url+"时出现IO异常");
         }finally {
             try {
                 httpClient.close();

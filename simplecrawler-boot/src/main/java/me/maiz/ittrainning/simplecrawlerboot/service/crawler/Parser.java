@@ -64,6 +64,20 @@ public class Parser {
             }
         }
         return elements;
+    } /**
+     * 得到需要的DOM元素
+     * @param page 指定的页面
+     * @param cssSelector 指定的css选择器,可以有多个
+     * @return
+     */
+    public Element getTargetElement(Page page, String... cssSelector){
+
+        Elements targetElements = getTargetElements(page, cssSelector);
+        if(targetElements!=null&&targetElements.size()>0) {
+            return targetElements.get(0);
+        }else{
+            return null;
+        }
     }
 
 }

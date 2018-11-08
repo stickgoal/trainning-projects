@@ -14,6 +14,7 @@ import java.util.Date;
 public class News {
     @NonNull
     private String title;
+
     private String intro;
     @NonNull
     private String url;
