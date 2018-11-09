@@ -18,7 +18,6 @@ public class Page {
     private String url ;//url路径
     private String contentType ;// 内容类型
 
-
     public Page(byte[] content , String url , String contentType){
         this.content = content ;
         this.url = url ;
