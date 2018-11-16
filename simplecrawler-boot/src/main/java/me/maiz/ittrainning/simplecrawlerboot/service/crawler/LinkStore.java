@@ -36,11 +36,34 @@ public class LinkStore {
      */
     public void addUnvisited(String unvisitedLink){
 
-        if(unvisitedLink!=null&&unvisitedLink.trim().length()>0&&!unvisitLinkQueue.contains(unvisitedLink)&&!visitedLinks.contains(unvisitedLink)){
+        if(checkUnvisitUrl(unvisitedLink)){
             logger.debug("添加URL到未访问链接队列中{}",unvisitedLink);
 
             unvisitLinkQueue.add(unvisitedLink);
         }
+    }
+
+    private boolean checkUnvisitUrl(String unvisitedLink) {
+        if(!(unvisitedLink!=null&&unvisitedLink.trim().length()>0)){
+            return false;
+        }
+        if(unvisitLinkQueue.contains(unvisitedLink)||unvisitLinkQueue.contains(unvisitedLink.concat("/"))){
+            logger.info("{}已在未访问队列中，忽略",unvisitedLink);
+            return false;
+        }
+        if(visitedLinks.contains(unvisitedLink)||visitedLinks.contains(unvisitedLink.concat("/"))){
+            logger.info("{}已访问，忽略",unvisitedLink);
+            return false;
+        }
+        if(unvisitedLink.contains("?")){
+            String url = unvisitedLink.substring(0,unvisitedLink.indexOf("?"));
+            if(visitedLinks.contains(url)||unvisitLinkQueue.contains(url)){
+                logger.info("{}已存在，忽略",unvisitedLink);
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

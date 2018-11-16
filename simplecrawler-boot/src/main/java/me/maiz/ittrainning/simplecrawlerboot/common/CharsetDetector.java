@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
  *
  * @author hu
  */
-public class CharsetDetector {
+    public class CharsetDetector {
 
     //从Nutch借鉴的网页编码检测代码
     private static final int CHUNK_SIZE = 2000;

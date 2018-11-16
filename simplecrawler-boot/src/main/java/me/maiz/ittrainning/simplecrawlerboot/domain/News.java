@@ -1,15 +1,9 @@
 package me.maiz.ittrainning.simplecrawlerboot.domain;
 
-import lombok.Data;
-import lombok.NonNull;
-import lombok.ToString;
-
 import javax.persistence.*;
 
-@Data
 @Table(name = "ss_news")
 @Entity
-@ToString
 public class News {
 
     @Id
@@ -18,11 +12,10 @@ public class News {
 
     private String site;
 
-    @NonNull
     private String title;
 
     private String intro;
-    @NonNull
+
     private String url;
 
     @Column(length = 10240)
@@ -35,5 +28,63 @@ public class News {
         this.site=site;
     }
 
+    public int getNewsId() {
+        return newsId;
+    }
 
+    public void setNewsId(int newsId) {
+        this.newsId = newsId;
+    }
+
+    public String getSite() {
+        return site;
+    }
+
+    public void setSite(String site) {
+        this.site = site;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "newsId=" + newsId +
+                ", site='" + site + '\'' +
+                ", title='" + title + '\'' +
+                ", intro='" + intro + '\'' +
+                ", url='" + url + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }
