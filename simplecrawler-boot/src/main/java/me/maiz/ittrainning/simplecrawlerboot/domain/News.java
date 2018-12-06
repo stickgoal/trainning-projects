@@ -21,7 +21,10 @@ public class News {
     @Column(length = 10240)
     private String content;
 
-    public News(String title,String intro,String url,String site){
+    public News() {
+    }
+
+    public News(String title, String intro, String url, String site){
         this.title=title;
         this.intro=intro;
         this.url=url;
