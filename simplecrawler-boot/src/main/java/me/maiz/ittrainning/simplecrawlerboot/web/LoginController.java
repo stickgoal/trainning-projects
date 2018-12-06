@@ -21,7 +21,7 @@ public class LoginController {
     private LoginService loginService;
 
 
-
+    // http://localhost:8080/user/login?username=lucas&password=1234567
     @RequestMapping(value = "login"/*,method = RequestMethod.POST*/)
     public Result login(LoginForm loginFrom){
         try {
