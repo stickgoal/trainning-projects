@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SimfySpider</string>
+    <string name="usernameEditHint">请输入用户名</string>
+    <string name="passwordEditHint">请输入您的密码</string>
+    <string name="loginBtn">登录</string>
 </resources>
