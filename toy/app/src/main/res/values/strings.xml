@@ -3,4 +3,9 @@
     <string name="usernameEditHint">请输入用户名</string>
     <string name="passwordEditHint">请输入您的密码</string>
     <string name="loginBtn">登录</string>
+    <string name="configName">配置名称</string>
+    <string name="titleSelector">名称的选择器</string>
+    <string name="add">添加</string>
+    <string name="reset">重置</string>
+    <string name="seedsUrl">起始搜索地址</string>
 </resources>

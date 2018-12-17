@@ -12,7 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".ToyApplication"
+
+        >
         <activity android:name=".activities.MainActivity">
 
         </activity>
@@ -24,6 +27,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.ContainerActivity">
+        </activity>
 
     </application>
 

@@ -1,4 +1,4 @@
-package maiz.me.toyapplication.integration.api;
+package maiz.me.toyapplication.integration;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

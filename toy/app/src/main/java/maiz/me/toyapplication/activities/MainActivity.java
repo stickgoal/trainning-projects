@@ -1,5 +1,6 @@
 package maiz.me.toyapplication.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
@@ -11,7 +12,6 @@ import android.widget.Toast;
 
 import maiz.me.toyapplication.R;
 import maiz.me.toyapplication.integration.api.LoginService;
-import maiz.me.toyapplication.integration.api.RetrofitHelper;
 import maiz.me.toyapplication.integration.api.dto.Result;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                             Log.i(TAG,result.toString());
                             if(result.isSuccess()) {
                                 Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                                MainActivity.this.startActivity(new Intent(MainActivity.this,ContainerActivity.class));
+                                MainActivity.this.finish();
+
                             }else {
                                 Toast.makeText(MainActivity.this, "登录失败：" + result.getMessage(), Toast.LENGTH_SHORT).show();
                             }

@@ -1,0 +1,29 @@
+package maiz.me.toyapplication.fragments;
+
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import maiz.me.toyapplication.R;
+import me.yokeyword.fragmentation.SupportFragment;
+
+public class CrawlResultListFragment extends FragementBase {
+    public static CrawlResultListFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        CrawlResultListFragment fragment = new CrawlResultListFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_crawl_result_list,container,false);
+    }
+}

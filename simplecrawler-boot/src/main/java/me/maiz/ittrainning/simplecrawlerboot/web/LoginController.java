@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("user")
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
