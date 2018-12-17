@@ -61,6 +61,7 @@ public class CrawlConfigureFragment extends FragementBase {
                         if(response.isSuccessful()){
                             Toast.makeText(getActivity(),"添加配置成功",Toast.LENGTH_SHORT).show();
                             EventBusActivityScope.getDefault(_mActivity).post(new SwitchToFragementEvent(1));
+                            hideSoftInput();
                         }else{
                             Toast.makeText(getActivity(),"添加配置失败["+response.errorBody()+"]",Toast.LENGTH_LONG).show();
                         }

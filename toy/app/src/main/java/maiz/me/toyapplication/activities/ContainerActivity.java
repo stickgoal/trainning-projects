@@ -106,8 +106,9 @@ public class ContainerActivity extends SupportActivity {
     @Override
     public void onBackPressedSupport() {
         Log.i("#onBackPressedSupport",">>>>>>>返回事件被触发");
+        Log.i("#onBackPressedSupport",""+getSupportFragmentManager().getBackStackEntryCount());
 
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             pop();
         } else {
             ActivityCompat.finishAfterTransition(this);
