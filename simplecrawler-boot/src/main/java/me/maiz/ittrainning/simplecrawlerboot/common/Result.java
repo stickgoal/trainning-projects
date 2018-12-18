@@ -49,6 +49,9 @@ public class Result {
     public static Result success(){
         return success(null);
     }
+    public static Result success(String message){
+        return new Result(true,"0000",message,null);
+    }
 
     public static Result success(Object data){
         return new Result(true,"0000","执行成功",data);

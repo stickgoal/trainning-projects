@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 import me.maiz.ittrainning.simplecrawlerboot.dal.NewsRepo;
+import me.maiz.ittrainning.simplecrawlerboot.domain.Config;
 import me.maiz.ittrainning.simplecrawlerboot.domain.News;
 import me.maiz.ittrainning.simplecrawlerboot.domain.Page;
 import org.jsoup.nodes.Element;
@@ -41,8 +42,8 @@ public class SimpleNewsCrawler {
     /**
      * 使用指定的种子开始爬取
      */
-    public void startCrawlingWith(NewsCrawlConfig config) throws IOException {
-        LinkStore linkStore = new LinkStore(config.getSeedsUrls());
+    public void startCrawlingWith(Config config) throws IOException {
+        LinkStore linkStore = new LinkStore(new String[]{config.getSeedsUrl()});
 
         while(canCrawl(linkStore,config.getCrawlTimesMax())){
             String toVisitURL = linkStore.pollUnVisited();

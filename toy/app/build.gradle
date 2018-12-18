@@ -25,9 +25,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
-//    MaterialDesign包
-    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+//  recyclerView
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+//  卡片视图
+    implementation 'com.android.support:cardview-v7:27.1.1'
+//  MaterialDesign包
+    implementation 'com.android.support:design:27.1.1'
 
 //  网络调用 retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -42,7 +46,12 @@ dependencies {
     implementation 'me.yokeyword:eventbus-activity-scope:1.1.0'
 // 本地异步通信EventBus
     implementation 'org.greenrobot:eventbus:3.0.0'
-//
+// 视图注入 butter knife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+// RecyclerView简化使用 BRVAH
+    
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
 
 //    测试包

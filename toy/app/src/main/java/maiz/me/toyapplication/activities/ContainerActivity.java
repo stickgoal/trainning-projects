@@ -9,7 +9,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import maiz.me.toyapplication.R;
 import maiz.me.toyapplication.common.SwitchToFragementEvent;
-import maiz.me.toyapplication.common.HomeFragement;
+import maiz.me.toyapplication.common.HomeFragment;
 import maiz.me.toyapplication.fragments.CrawlConfigListFragment;
 import maiz.me.toyapplication.fragments.CrawlConfigureFragment;
 import maiz.me.toyapplication.fragments.CrawlResultListFragment;
@@ -32,11 +32,11 @@ public class ContainerActivity extends SupportActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
 
-        CrawlConfigureFragment ccf = findFragment(CrawlConfigureFragment.class);
+        CrawlConfigListFragment clf = findFragment(CrawlConfigListFragment.class);
         //不存在则创建
-        if(ccf==null) {
-            mFragments[0]=CrawlConfigureFragment.newInstance();
-            mFragments[1]=CrawlConfigListFragment.newInstance();
+        if(clf==null) {
+            mFragments[0]=CrawlConfigListFragment.newInstance();
+            mFragments[1]=CrawlConfigureFragment.newInstance();
             mFragments[2]=CrawlResultListFragment.newInstance();
             loadMultipleRootFragment(R.id.frgment_contaienr,0
                     ,mFragments[0]
@@ -44,8 +44,8 @@ public class ContainerActivity extends SupportActivity {
                     ,mFragments[2]
                     );
         }else{
-            mFragments[0]=ccf;
-            mFragments[1]=findFragment(CrawlConfigListFragment.class);
+            mFragments[0]=clf;
+            mFragments[1]=findFragment(CrawlConfigureFragment.class);
             mFragments[2]=findFragment(CrawlResultListFragment.class);
         }
 
@@ -80,7 +80,7 @@ public class ContainerActivity extends SupportActivity {
 
                 // 如果不在该类别Fragment的主页,则回到主页;
                 if (count > 1) {
-                    if (currentFragment instanceof HomeFragement) {
+                    if (currentFragment instanceof HomeFragment) {
                         currentFragment.popToChild(CrawlConfigureFragment.class, false);
                     } else if (currentFragment instanceof CrawlConfigListFragment) {
                         currentFragment.popToChild(CrawlConfigureFragment.class, false);

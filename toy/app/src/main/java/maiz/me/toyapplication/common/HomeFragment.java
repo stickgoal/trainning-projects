@@ -1,4 +1,4 @@
 package maiz.me.toyapplication.common;
 
-public interface HomeFragement {
+public interface HomeFragment {
 }

@@ -20,6 +20,10 @@
 
         </activity>
         <activity android:name=".activities.SplashActivity" android:theme="@style/FullScreenTheme">
+
+        </activity>
+
+        <activity android:name=".activities.ContainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +31,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ContainerActivity">
+        <activity android:name=".demo.RecylerViewDemoActivity">
+
         </activity>
 
     </application>

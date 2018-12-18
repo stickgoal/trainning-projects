@@ -1,48 +1,14 @@
 package maiz.me.toyapplication.integration.api.dto;
 
-public class Result {
+public class Result<T> {
     private boolean success;
     private String code;
     private String message;
-    private Object data;
+    private T data;
 
     public Result() {
     }
 
-    public Result(boolean success) {
-        this.success = success;
-        this.message = success ? "执行成功" : "执行失败";
-        this.code = success ? "0000" : "1000";
-    }
-
-    public Result(boolean success, String code, String message) {
-        this.success = success;
-        this.code = code;
-        this.message = message;
-    }
-
-    public Result(boolean success, String code, String message, Object data) {
-        this.success = success;
-        this.code = code;
-        this.message = message;
-        this.data = data;
-    }
-
-    public static Result success() {
-        return success(null);
-    }
-
-    public static Result success(Object data) {
-        return new Result(true, "0000", "执行成功", data);
-    }
-
-    public static Result generalFail() {
-        return fail("1000", "未知错误");
-    }
-
-    public static Result fail(String code, String message) {
-        return new Result(false, code, message, null);
-    }
 
 
 
@@ -70,11 +36,11 @@ public class Result {
         this.message = message;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 

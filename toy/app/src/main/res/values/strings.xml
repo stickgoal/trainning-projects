@@ -8,4 +8,7 @@
     <string name="add">添加</string>
     <string name="reset">重置</string>
     <string name="seedsUrl">起始搜索地址</string>
+    <string name="horizonal">横向</string>
+    <string name="vertical">纵向</string>
+    <string name="startCrawling">触发</string>
 </resources>

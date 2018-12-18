@@ -21,9 +21,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CrawlConfigureFragment extends FragementBase {
+public class CrawlConfigureFragment extends FragmentBase {
 
-    private static final String T = "CrawlConfigListFragment";
+    private static final String T = "RecylerViewDemoActivity";
 
     public static CrawlConfigureFragment newInstance() {
         Bundle args = new Bundle();
@@ -52,7 +52,7 @@ public class CrawlConfigureFragment extends FragementBase {
 
 
                 ConfigService configService = new RetrofitHelper().getService(ConfigService.class);
-                Call<Result> call = configService.addConfig(configName,titleSelector,seedsUrl);
+                Call<Result> call = configService.addConfig(1,configName,titleSelector,seedsUrl);
 
                 call.enqueue(new Callback<Result>() {
                     @Override
