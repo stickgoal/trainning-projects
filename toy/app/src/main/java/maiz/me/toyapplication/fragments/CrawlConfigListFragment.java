@@ -46,6 +46,7 @@ public class CrawlConfigListFragment extends FragmentBase implements HomeFragmen
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_crawl_config_list,container,false);
+/*
 
         RecyclerView rv = v.findViewById(R.id.configList);
 
@@ -55,6 +56,7 @@ public class CrawlConfigListFragment extends FragmentBase implements HomeFragmen
         rv.setAdapter(adapter);
 
         rv.setLayoutManager(new LinearLayoutManager(_mActivity));
+*/
 
         return v;
     }

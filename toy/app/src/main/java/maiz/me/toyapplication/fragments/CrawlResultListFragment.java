@@ -37,11 +37,11 @@ public class CrawlResultListFragment extends FragmentBase {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crawl_result_list, container, false);
-
+/*
         RecyclerView rv = view.findViewById(R.id.resultList);
         rv.setLayoutManager(new LinearLayoutManager(_mActivity));
 
-        rv.setAdapter(configAdapter(rv));
+        rv.setAdapter(configAdapter(rv));*/
 
         return view;
     }

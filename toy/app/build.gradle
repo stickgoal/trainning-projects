@@ -48,11 +48,11 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.0.0'
 // 视图注入 butter knife
     implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 // RecyclerView简化使用 BRVAH
-    
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
 //    测试包
     testImplementation 'junit:junit:4.12'

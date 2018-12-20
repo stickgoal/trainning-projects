@@ -36,6 +36,7 @@ public class CrawlConfigureFragment extends FragmentBase {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crawl_config,container,false);
+/*
 
         AppCompatButton addButton = v.findViewById(R.id.addConfig);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +76,7 @@ public class CrawlConfigureFragment extends FragmentBase {
 
             }
         });
+*/
 
         return v;
 
