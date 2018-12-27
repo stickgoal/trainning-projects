@@ -48,7 +48,7 @@ public class CrawlingController {
     @GetMapping("result")
     public Result getResult(ResultQueryForm resultQueryForm){
         try {
-            List<News> news = newsService.query(resultQueryForm.getUserId(), resultQueryForm.getPageIdx(), resultQueryForm.getPageSize());
+            List<News> news = newsService.query(resultQueryForm.getUserId(), resultQueryForm.getIndex(), resultQueryForm.getPageSize());
             return Result.success(news);
         }catch (Exception e){
             e.printStackTrace();

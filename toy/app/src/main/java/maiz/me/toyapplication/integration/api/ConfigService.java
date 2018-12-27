@@ -3,6 +3,7 @@ package maiz.me.toyapplication.integration.api;
 import java.util.List;
 
 import maiz.me.toyapplication.integration.api.dto.CrawlConfig;
+import maiz.me.toyapplication.integration.api.dto.PageResult;
 import maiz.me.toyapplication.integration.api.dto.Result;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,5 +21,5 @@ public interface ConfigService {
                            );
 
     @GET("queryConfig")
-    Call<Result<List<CrawlConfig>>> queryConfig(@Query("userId")int userId, @Query("index")int index, @Query("pageSize")int pageSize);
+    Call<PageResult<CrawlConfig>> queryConfig(@Query("userId")int userId, @Query("index")int index, @Query("pageSize")int pageSize);
 }

@@ -19,17 +19,6 @@ import maiz.me.toyapplication.R;
  */
 public class RecyclerViewDemoAdapter extends RecyclerView.Adapter<RecyclerViewDemoAdapter.VH> {
 
-    //静态内部类视图持有者，解耦外部和内部视图
-    public static class VH extends RecyclerView.ViewHolder{
-
-        private TextView textView;
-
-
-        public VH(View itemView) {
-            super(itemView);
-            textView =  itemView.findViewById(R.id.configListItem);
-        }
-    }
     //外部上下文的引用
     private Context context;
     //数据
@@ -41,29 +30,29 @@ public class RecyclerViewDemoAdapter extends RecyclerView.Adapter<RecyclerViewDe
         this.context=context;
     }
 
-    //回调方法，当创建VH的时候调用该方法，用于获取layout
+    //视图持有者，静态内部类，在adapter内部持有itemLayout，避免重复加载itemLayout,提升性能
+    public static class VH extends RecyclerView.ViewHolder{
+        private TextView textView;
+        public VH(View itemView) {
+            super(itemView);
+            textView =  itemView.findViewById(R.id.configListItem);
+        }
+    }
 
-    @NonNull
-    @Override
+    //回调方法，当创建VH的时候调用该方法，用于获取单条数据的layout
+      @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.i("===>","添加条目");
-        //得到每个条目的视图
+        Log.i("rv","创建ViewHolder");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_recyclerview_demo,parent,false);
-        return new VH(v);
+        return new VH(v);//使用viewHolder将数据包装
     }
 
     //回调方法，当绑定VH的时候调用该方法，用于绑定数据
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
+        Log.i("rv","绑定ViewHolder");
         holder.textView.setText(data.get(position));
-        Log.i("===>","绑定条目："+data.get(position));
-
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,((TextView)v).getText(),Toast.LENGTH_LONG).show();
-            }
-        });
+        holder.textView.setOnClickListener(v -> Toast.makeText(context,((TextView)v).getText(),Toast.LENGTH_LONG).show());
     }
 
     //得到数据量

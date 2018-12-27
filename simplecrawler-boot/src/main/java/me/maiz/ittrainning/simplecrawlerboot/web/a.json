@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "code": "0000",
+  "message": null,
+  "data": null,
+  "totalPages": 1,
+  "totalCount": 4,
+  "content": [
+    {
+      "configId": 1,
+      "userId": 1,
+      "configName": "金融时报中文版新闻抓取",
+      "crawlTimesMax": 5,
+      "seedsUrl": "http://www.ftchinese.com",
+      "targetElementSelector": ".items>.item-container",
+      "newLinkSelector": null,
+      "titleSelector": ".item-headline-link",
+      "introSelector": ".item-lead",
+      "urlSelector": ".item-headline-link",
+      "contentBodySelector": "#story-body-container"
+    },
+    ...
+  ]
+}

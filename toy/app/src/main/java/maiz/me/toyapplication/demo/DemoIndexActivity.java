@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import maiz.me.toyapplication.R;
+import maiz.me.toyapplication.activities.ContainerActivity;
 import maiz.me.toyapplication.demo.fragmentation.FragmentationDemoActivity;
 
 public class DemoIndexActivity extends AppCompatActivity {
@@ -38,6 +39,16 @@ public class DemoIndexActivity extends AppCompatActivity {
     @OnClick(R.id.toRecyclerViewDemo)
     public void toRVDemo(){
         startActivity(new Intent(this,RecylerViewDemoActivity.class));
+    }
+
+    @OnClick(R.id.toBRVAHDemo)
+    public void toBRVAHDemo(){
+        startActivity(new Intent(this,BRVAHDemoActivity.class));
+    }
+
+    @OnClick(R.id.toHome)
+    public void toHome(){
+        startActivity(new Intent(this,ContainerActivity.class));
     }
 
 

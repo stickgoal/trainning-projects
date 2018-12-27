@@ -7,6 +7,10 @@
     >
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/toHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="加载主页"/>
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/toFragmentDemo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:text="fragmentDemo"/>
@@ -18,6 +22,10 @@
         android:id="@+id/toRecyclerViewDemo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:text="recyclerViewDemo"/>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/toBRVAHDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="BRVAHDemo"/>
 
 
 </LinearLayout>

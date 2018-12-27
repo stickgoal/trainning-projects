@@ -24,20 +24,22 @@
         </activity>
 
         <activity android:name=".activities.ContainerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
 
         <!--demo的入口activity-->
         <activity android:name=".demo.DemoIndexActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!--一些demo-->
         <activity android:name=".demo.RecylerViewDemoActivity"/>
         <activity android:name=".demo.FragmentDemoActivity"/>
         <activity android:name=".demo.fragmentation.FragmentationDemoActivity" />
+        <activity android:name=".demo.BRVAHDemoActivity" />
 
     </application>
 

@@ -3,15 +3,15 @@ package me.maiz.ittrainning.simplecrawlerboot.web.form;
 
 public abstract class QueryForm {
 
-    private int pageIdx;
+    private int index;
     private int pageSize=10;
 
-    public int getPageIdx() {
-        return pageIdx;
+    public int getIndex() {
+        return index;
     }
 
-    public void setPageIdx(int pageIdx) {
-        this.pageIdx = pageIdx;
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public int getPageSize() {

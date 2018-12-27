@@ -23,4 +23,5 @@ public class ToyApplication extends Application {
                 .handleException(e -> Log.e(T, "Fragmentation使用出现异常", e))
                 .install();
     }
+
 }

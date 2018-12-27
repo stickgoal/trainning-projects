@@ -1,6 +1,7 @@
 package me.maiz.ittrainning.simplecrawlerboot.service;
 
 import me.maiz.ittrainning.simplecrawlerboot.domain.Config;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -13,6 +14,6 @@ public interface ConfigService {
      */
     boolean addConfig(Config config);
 
-    List<Config> queryConfig(int userId,int pageIdx,int pageSize);
+    Page<Config> queryConfig(int userId, int pageIdx, int pageSize);
 
 }

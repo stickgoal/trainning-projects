@@ -1,6 +1,7 @@
 package maiz.me.toyapplication.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
@@ -64,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                             Result result = response.body();
                             Log.i(TAG,result.toString());
                             if(result.isSuccess()) {
-                                //TODO 登录后记录用户信息
+
+
                                 Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                                 MainActivity.this.startActivity(new Intent(MainActivity.this,ContainerActivity.class));
                                 MainActivity.this.finish();

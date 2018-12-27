@@ -72,7 +72,9 @@ public class ContainerActivity extends SupportActivity {
             public void onTabUnselected(int position) {}
 
             @Override//当再次选中（再次点击已选中的tab）
-            public void onTabReselected(int position) {}
+            public void onTabReselected(int position) {
+                mBottomBar.setCurrentItem(position);
+            }
         });
 
     }
