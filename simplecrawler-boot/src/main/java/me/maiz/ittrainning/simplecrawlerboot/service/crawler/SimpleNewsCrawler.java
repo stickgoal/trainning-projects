@@ -66,13 +66,15 @@ public class SimpleNewsCrawler {
                         if (introElement != null && introElement.size() > 0) {
                             intro = introElement.get(0).text();
                         }
-                        //获取内容页，目前不分页
+                        News news = new News(title, intro, url,config.getConfigName());
+
+                      /*  //获取内容页，目前不分页
                         Page contentPage = visitor.visit(url);
                         Element contentElement =  parser.getTargetElement(contentPage,config.getContentBodySelector());
-                        News news = new News(title, intro, url,config.getConfigName());
                         if(contentElement!=null) {
                             news.setContent(contentElement.html());
-                        }
+                        }*/
+
                         newsList.add(news);
                     }
                 }
