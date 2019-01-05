@@ -1,0 +1,52 @@
+<div class="header">
+    <div class="menu-btn">
+        <div class="menu"></div>
+    </div>
+    <h1 class="logo">
+        <a href="index.html">
+            <span>小麦博客</span>
+            <img src="img/logo.png">
+        </a>
+    </h1>
+    <div class="nav">
+        <a href="index" class="active">文章</a>
+        <a href="photo">相册</a>
+        <a href="about">关于</a>
+    </div>
+
+    <ul class="layui-nav header-down-nav">
+        <li class="layui-nav-item">
+            <a href="index" class="active">文章</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="photo">相册</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about">关于</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="login">登录</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="reg">注册</a>
+        </li>
+    </ul>
+
+    <p class="welcome-text">
+        {{#username}}
+        欢迎来到<span class="name">{{username}}</span>的博客~
+        {{/username}}
+        <button class="layui-btn">
+            <a href="login">登录</a>
+        </button>
+        <button class="layui-btn">
+            <a href="reg">注册</a>
+        </button>
+        <button class="layui-btn layui-btn-danger">
+            <a href="write">写文章</a>
+        </button>
+        <button class="layui-btn ">
+            <a href="photo">传照片</a>
+        </button>
+    </p>
+</div>

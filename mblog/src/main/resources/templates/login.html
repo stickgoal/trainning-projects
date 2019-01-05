@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {{>layout/header}}
+  <title>登录</title>
+</head>
+<body>
+  {{>layout/nav}}
+
+  <div >
+    login page
+  </div>
+
+{{>layout/footer}}
+  <script type="text/javascript" src="layui/layui.js"></script>
+  <script type="text/javascript">
+   layui.config({
+      base: 'js/util/'
+    }).use(['element','laypage','form','layer','menu'],function(){
+      element = layui.element,laypage = layui.laypage,form = layui.form,layer = layui.layer,menu = layui.menu;
+      laypage.render({
+        elem: 'demo'
+        ,count: 70 //数据总数，从服务端得到
+      });
+      layer.photos({
+        photos: '#layer-photos-demo'
+        ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+        ,tab:function(pic,layero){
+          console.log(pic,layero)
+        }
+      });
+      menu.init(); 
+    })
+  </script>
+</body>
+</html>

@@ -14,7 +14,7 @@
 body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif; overflow-x: hidden;}
 .w1000{max-width: 1000px!important; margin:0 auto;}
 .header{height: 120px; line-height: 120px; position: relative; font-size: 16px;}
-.header .logo,.header .welcome-text,.header .nav{position: absolute; top: 0;}
+.header .logo,.header .welcome-text,.header .nav,.nav .pull-right{position: absolute; top: 0;}
 .header .logo{left: 65px;}
 .header .logo span{display: none;}
 .header .nav{left: 250px;}
@@ -22,6 +22,8 @@ body{font: 14px 宋体 Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-se
 .header .nav a.active{color: #ff7f21;}
 .header .welcome-text{right: 50px;}
 .header .header-down-nav{display: none;}
+.header .nav .pull-right{display:inline-block;right:50px}
+
 
 
 .banner{height: 600px; width: 100%; background: url(../img/banner.jpg) no-repeat; background-size:cover;}
