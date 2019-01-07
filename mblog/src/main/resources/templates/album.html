@@ -3,6 +3,12 @@
 <head>
  {{>layout/header}}
   <title>Document</title>
+  <style>
+    #preview{
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
   {{>layout/nav}}
@@ -15,151 +21,48 @@
         <p class="text">观赏最美的土耳其的日</p>
       </div>
     </div>
-    <div class="img-list">
-      <div class="layui-fluid" style="padding:0">
-        <div class="layui-row layui-col-space30 space">
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img3.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
+    <div class="layui-collapse ">
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">上传</h2>
+        <div class="layui-colla-content"><!--class中加入layui-show 展示该面板，没有则不显示-->
+          <div id="upload-area" class="w1000">
+
+            <form class="layui-form" action="uploadPhoto" method="post">
+              <input type="hidden" name="filePath" />
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <div class="layui-upload-drag" id="uploadBtn">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img4.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
+              <div class="layui-form-item layui-form-text preview-block layui-hide">
+                <label class="layui-form-label">预览</label>
+                <div class="layui-input-block">
+                  <img src="" id="preview" alt="">
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img5.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">照片描述</label>
+                <div class="layui-input-block">
+                  <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img3.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
+              <div class="layui-form-item layui-form-text">
+                <div class="layui-input-block">
+                  <a class="layui-btn" id="startUpload">上传</a>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img4.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img5.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img3.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img4.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img5.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img3.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img4.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img5.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img3.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
-          </div>
-          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
-            <div class="item">
-              <img src="img/xc_img4.jpg">
-              <div class="cont-text">
-                <div class="data">2018/08/08</div>
-                <p class="address"><i class="layui-icon layui-icon-location"></i><span>江西九江</span></p>
-                <p class="briefly">今日天气晴朗,庐山一日游</p>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
+
+
+    <div class="img-list">
+
       <div id="demo"></div>
     </div>
   </div>
@@ -169,11 +72,31 @@
   <script type="text/javascript">
    layui.config({
       base: 'js/util/'
-    }).use(['element','laypage','form','layer','menu'],function(){
-      element = layui.element,laypage = layui.laypage,form = layui.form,layer = layui.layer,menu = layui.menu;
-      laypage.render({
-        elem: 'demo'
-        ,count: 70 //数据总数，从服务端得到
+    }).use(['element','laypage','form','layer','menu','upload','jquery'],function(){
+      var element = layui.element,laypage = layui.laypage,form = layui.form,layer = layui.layer,menu = layui.menu;
+      var $ = layui.jquery;
+
+      var upload = layui.upload;
+      upload.render({
+          elem:"#uploadBtn",
+          data:{
+              'memo':function(){
+                  return $("[name=desc]").val();
+              }
+          },
+          choose:function (obj) {
+              $(".preview-block").removeClass("layui-hide");
+              obj.preview(function(index,file,result){
+                  $("#preview").attr("src",result);
+              });
+          },
+          auto:false,
+          bindAction:"#startUpload",
+          url:"upload",
+          done:function (res) {
+              console.log($("[name=desc]").val());
+              console.log(res);
+          }
       });
       layer.photos({
         photos: '#layer-photos-demo'

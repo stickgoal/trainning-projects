@@ -10,6 +10,7 @@ public class SysController {
     public String error(){
         return "404";
     }
+
     @RequestMapping("notLogin")
     public String notLogin(){
         return "notLogin";

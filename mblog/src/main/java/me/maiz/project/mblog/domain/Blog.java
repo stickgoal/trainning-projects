@@ -1,6 +1,8 @@
 package me.maiz.project.mblog.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,6 +10,8 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name="mblog_blog")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Blog {
     /**
      * ID
