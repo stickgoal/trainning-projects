@@ -28,7 +28,7 @@
           <a href="javascript:;">旅游杂记</a>
         </span>
       </div>
-      {{#blogs}}
+      {{#blogPage.content}}
       <div class="list-item">
         <div class="item">
           <div class="layui-fluid">
@@ -49,8 +49,8 @@
         </div>
 
       </div>
-      {{/blogs}}
-      <div id="demo" style="text-align: center;"></div>
+      {{/blogPage.content}}
+      <div id="pageContainer" style="text-align: center;"></div>
     </div>
   </div>
 
@@ -63,8 +63,15 @@
     }).use(['element','laypage','jquery','menu'],function(){
       element = layui.element,laypage = layui.laypage,$ = layui.$,menu = layui.menu;
       laypage.render({
-        elem: 'demo'
-        ,count: 70 //数据总数，从服务端得到
+        elem: 'pageContainer'
+        ,count: {{blogPage.totalElements}} //数据总数，从服务端得到
+        ,limit:5
+        ,curr:Number({{currIndex}}+1)
+        ,jump:function(obj,first) {
+            if(!first){
+              location.href="index?pageIdx="+(obj.curr-1)
+            }
+        }
       });
       menu.init();
     })

@@ -62,7 +62,19 @@
 
 
     <div class="img-list">
+      <ul class="layui-timeline">
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">8月18日</h3>
+            <p>
+              <img src="" />
+              {{ctx}}
+            </p>
+          </div>
+        </li>
 
+      </ul>
       <div id="demo"></div>
     </div>
   </div>
@@ -98,6 +110,7 @@
               console.log(res);
           }
       });
+      //
       layer.photos({
         photos: '#layer-photos-demo'
         ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
