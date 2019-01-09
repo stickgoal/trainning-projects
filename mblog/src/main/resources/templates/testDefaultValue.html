@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="userType" id="select">
+    <option defaultdata="{{userType}}" value="admin">admin</option>
+    <option defaultdata="{{userType}}" value="user">user</option>
+</select>
+<div>
+    <input type="checkbox" value="admin" name="userType" defaultdata="{{userType}}"/> admin
+    <input type="checkbox" value="user" name="userType" defaultdata="{{userType}}"/> user
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        var defaultData = $("[defaultdata]");
+        if (defaultData) {
+            defaultData.each(function (index, elem) {
+                console.log(elem);
+                var e = $(elem);
+                if (e.is("option")) {
+                    if (e.val() === e.attr("defaultdata")) {
+                        e.attr("selected", true);
+                    }
+                } else if(e.is("[type=checkbox]")){
+                    if (e.val() === e.attr("defaultdata")) {
+                        e.attr("checked", "checked");
+                    }
+                }
+            });
+
+        }
+    })
+</script>
+</body>
+</html>

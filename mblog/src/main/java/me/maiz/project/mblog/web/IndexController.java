@@ -45,4 +45,9 @@ public class IndexController {
         return "";
     }
 
+    @RequestMapping("testd")
+    public String testDefaultData(ModelMap modelMap,@RequestParam(required = false,defaultValue = "user") String userType){
+        modelMap.put("userType",userType);
+        return "testDefaultValue";
+    }
 }

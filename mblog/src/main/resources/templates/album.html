@@ -27,7 +27,7 @@
         <div class="layui-colla-content"><!--class中加入layui-show 展示该面板，没有则不显示-->
           <div id="upload-area" class="w1000">
 
-            <form class="layui-form" action="uploadPhoto" method="post">
+            <form class="layui-form" action="/upload" method="post">
               <input type="hidden" name="filePath" />
               <div class="layui-form-item">
                 <div class="layui-input-block">
@@ -68,8 +68,7 @@
           <div class="layui-timeline-content layui-text">
             <h3 class="layui-timeline-title">8月18日</h3>
             <p>
-              <img src="" />
-              {{ctx}}
+              <img src="" id="uploaded"/>
             </p>
           </div>
         </li>
@@ -82,6 +81,7 @@
 {{>layout/footer}}
   <script type="text/javascript" src="layui/layui.js"></script>
   <script type="text/javascript">
+    var staticServer = "{{staticServerAddress}}";
    layui.config({
       base: 'js/util/'
     }).use(['element','laypage','form','layer','menu','upload','jquery'],function(){
@@ -107,6 +107,13 @@
           url:"upload",
           done:function (res) {
               console.log($("[name=desc]").val());
+              console.log(res);
+              if(res.success){
+              $("#uploaded").attr("src",staticServer+res.data);
+              }
+          },
+          error:function(index,res){
+              console.log(index);
               console.log(res);
           }
       });
