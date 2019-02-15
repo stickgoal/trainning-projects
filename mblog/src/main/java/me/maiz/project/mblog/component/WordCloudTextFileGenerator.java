@@ -4,7 +4,6 @@ import com.kennycason.kumo.CollisionMode;
 import com.kennycason.kumo.WordCloud;
 import com.kennycason.kumo.WordFrequency;
 import com.kennycason.kumo.bg.CircleBackground;
-import com.kennycason.kumo.bg.PixelBoundryBackground;
 import com.kennycason.kumo.font.scale.SqrtFontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
 import com.kennycason.kumo.nlp.tokenizers.ChineseWordTokenizer;
@@ -22,10 +21,9 @@ import org.springframework.util.StopWatch;
 
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Slf4j
 @Component
@@ -36,6 +34,10 @@ public class WordCloudTextFileGenerator implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        //createWordCloudImage();
+    }
+
+    private void createWordCloudImage() throws IOException {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start("开始读取博客内容");
         log.info("开始读取博客内容");
@@ -44,8 +46,8 @@ public class WordCloudTextFileGenerator implements InitializingBean {
         stopWatch.stop();
 
         stopWatch.start("生成博客内容文件");
-       String allString = blogs.stream().map(blog -> blog.getBlogContent()).collect(Collectors.joining());
-       String text = Jsoup.parse(allString).text();
+        String allString = blogs.stream().map(blog -> blog.getBlogContent()).collect(Collectors.joining());
+        String text = Jsoup.parse(allString).text();
         FileUtils.writeStringToFile(new File(AppConstants.BLOG_WORD_CLOUD_TEXT_FILE),text);
         stopWatch.stop();
 
@@ -72,6 +74,5 @@ public class WordCloudTextFileGenerator implements InitializingBean {
         stopWatch.stop();
 
         log.info("{}",stopWatch.prettyPrint());
-
     }
 }

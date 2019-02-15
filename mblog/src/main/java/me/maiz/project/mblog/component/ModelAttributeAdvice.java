@@ -17,7 +17,6 @@ public class ModelAttributeAdvice {
 
     @ModelAttribute("staticServerAddress")
     public String staticServerAddr(){
-        System.out.println("add========");
         return staticServerAddress;
     }
 }
