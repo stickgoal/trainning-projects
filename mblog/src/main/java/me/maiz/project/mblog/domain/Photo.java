@@ -23,8 +23,6 @@ public class Photo {
     private int photoId;
     //存储路径
     private String path;
-    //用户输入的描述信息
-    private String description;
     //拍摄日期
     private Date takeDate;
     //相机模型
@@ -35,5 +33,10 @@ public class Photo {
     private int height;
     //标签列表，逗号分隔，由百度AI的接口获得
     private String tags;
-
+    //经度
+    private double longitude;
+    //纬度
+    private double latitude;
+    //备注
+    private String memo;
 }
