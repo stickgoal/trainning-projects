@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class MblogApplication {
 
     public static void main(String[] args) {
+        System.setProperty("spring.profiles.active","production");
         SpringApplication.run(MblogApplication.class, args);
     }
 

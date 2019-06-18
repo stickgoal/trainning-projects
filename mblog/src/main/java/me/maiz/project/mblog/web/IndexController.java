@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,7 @@ public class IndexController {
         PageRequest pageRequest = PageRequest.of(pageIdx, pageSize);
         Page<Blog> blogPage = blogRepo.findAll(pageRequest);
         modelmap.addAttribute("blogPage", blogPage);
+        modelmap.put("myDate",new Date());
         return "index";
     }
 

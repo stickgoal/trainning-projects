@@ -15,9 +15,9 @@ public class BaiduAIClient {
     private static  final Logger logger = LoggerFactory.getLogger(BaiduAIClient.class);
 
     //设置APPID/AK/SK
-    public static final String APP_ID = "15565341";
-    public static final String API_KEY = "dp2Qu9L9q45Ofc9Z3l38RexT";
-    public static final String SECRET_KEY = "VWz1jXYk9F3ngUFHy4crRfIlbwCnCPnr";
+    public static final String APP_ID = "15717644";
+    public static final String API_KEY = "MBD00igblljWRKaZxF11uBX6";
+    public static final String SECRET_KEY = "ZhuAC73zX2lrOzg5ixibws1GoRfQf4vR";
 
     // 初始化一个AipImageClassifyClient
     private static final AipImageClassify client = new AipImageClassify(APP_ID, API_KEY, SECRET_KEY);
