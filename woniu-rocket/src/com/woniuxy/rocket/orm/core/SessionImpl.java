@@ -38,10 +38,13 @@ public class SessionImpl implements Session {
 		try {
 
 			for (ColumnMapping cm : mapping.getColumnMappings()) {
-				Field f = entityClass.getDeclaredField(cm.getProperty());
-				f.setAccessible(true);
+				//忽略主键赋值
+				if (!(cm.isPk() && cm.isPkAuto())) {
+					Field f = entityClass.getDeclaredField(cm.getProperty());
+					f.setAccessible(true);
 
-				params.add(f.get(obj));
+					params.add(f.get(obj));
+				}
 			}
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 			throw new PersistException("反射获取字段值出错", e);
@@ -59,7 +62,7 @@ public class SessionImpl implements Session {
 	}
 
 	@Override
-	public <T> int delete(Class<T> entityClass,int id) {
+	public <T> int delete(Class<T> entityClass, int id) {
 		TableMapping mapping = getMapping(entityClass.getSimpleName());
 
 		String sql = SqlGenerator.deleteById(mapping);
@@ -86,13 +89,13 @@ public class SessionImpl implements Session {
 					Field f = entityClass.getDeclaredField(cm.getProperty());
 					f.setAccessible(true);
 					params.add(f.get(obj));
-				}else {
+				} else {
 					Field f = entityClass.getDeclaredField(cm.getProperty());
 					f.setAccessible(true);
-					pkValue=f.getInt(obj);
+					pkValue = f.getInt(obj);
 				}
 			}
-			//updateById时，最后的一个字段是主键
+			// updateById时，最后的一个字段是主键
 			params.add(pkValue);
 
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {

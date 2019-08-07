@@ -58,6 +58,7 @@ public class DbUtils {
 			for (int i = 1; i <= params.length; i++) {
 				pstmt.setObject(i, params[i - 1]);
 			}
+			System.out.println("执行更新语句："+pstmt);
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersistException("sql异常", e);
@@ -74,6 +75,8 @@ public class DbUtils {
 			for (int i = 1; i <= params.length; i++) {
 				pstmt.setObject(i, params[i - 1]);
 			}
+			System.out.println("执行查询语句："+pstmt);
+
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				resultList.add(adapter.adapt(rs));

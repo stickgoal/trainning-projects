@@ -27,7 +27,12 @@ public class ColumnMapping {
      * 是否为主键
      */
     private boolean isPk;
-
+    
+    /**
+     * 主键是否自动生成
+     */
+    private boolean isPkAuto;
+    
 	public String getProperty() {
 		return property;
 	}
@@ -68,12 +73,18 @@ public class ColumnMapping {
 		this.isPk = isPk;
 	}
 
+	public boolean isPkAuto() {
+		return isPkAuto;
+	}
+
+	public void setPkAuto(boolean isPkAuto) {
+		this.isPkAuto = isPkAuto;
+	}
+
 	@Override
 	public String toString() {
 		return "ColumnMapping [property=" + property + ", propertyType=" + propertyType + ", column=" + column
-				+ ", columnType=" + columnType + ", isPk=" + isPk + "]";
+				+ ", columnType=" + columnType + ", isPk=" + isPk + ", isPkAuto=" + isPkAuto + "]";
 	}
-    
-    
 
 }

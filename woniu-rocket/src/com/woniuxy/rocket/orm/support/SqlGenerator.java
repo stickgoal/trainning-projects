@@ -34,14 +34,19 @@ public class SqlGenerator {
 	}
 
 	public static String insert(TableMapping table) {
+		boolean pkAuto = false;
 		StringBuilder sqlBuilder = new StringBuilder();
 		sqlBuilder.append("insert into ").append(table.getTableName()).append("(");
 		for (ColumnMapping c : table.getColumnMappings()) {
-			sqlBuilder.append(c.getColumn()).append(",");
+			if(!(c.isPk()&&c.isPkAuto())) {
+				sqlBuilder.append(c.getColumn()).append(",");
+			}else {
+				pkAuto=true;
+			}
 		}
 		sqlBuilder.deleteCharAt(sqlBuilder.length() - 1);
 		sqlBuilder.append(") values(");
-		sqlBuilder.append(StringUtil.repeat("?,", table.getColumnMappings().size()));
+		sqlBuilder.append(StringUtil.repeat("?,", pkAuto?table.getColumnMappings().size()-1:table.getColumnMappings().size()));
 		sqlBuilder.deleteCharAt(sqlBuilder.length() - 1);
 		sqlBuilder.append(")");
 		return sqlBuilder.toString();

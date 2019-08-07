@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<little-mvc>
+	<component-scan base-package="com.woniu.rockettest.controller"/>
+
+	<view-resolver>
+		<prefix value="/WEB-INF/page/"/>
+		<suffix value=".jsp"/>
+	</view-resolver>
+</little-mvc>

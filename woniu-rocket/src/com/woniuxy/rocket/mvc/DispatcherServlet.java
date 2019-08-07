@@ -63,8 +63,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //分发请求
-        String requestURI = req.getRequestURI();
-        requestURI = normalize(requestURI);
+        String requestURI = normalize(req);
 
         String reqMethod = req.getMethod();
 
@@ -109,7 +108,11 @@ public class DispatcherServlet extends HttpServlet {
 
     }
 
-    private String normalize(String requestURI) {
+    private String normalize(HttpServletRequest req) {
+    	String requestURI = req.getRequestURI();
+    	if(requestURI.contains(req.getContextPath())) {
+    		requestURI=requestURI.replace(req.getContextPath()+"/", "");
+    	}
         if (!requestURI.endsWith("/")) {
             requestURI += "/";
         }
@@ -188,7 +191,10 @@ public class DispatcherServlet extends HttpServlet {
                 if (method.isAnnotationPresent(LittleRequestMapping.class)) {
 
                     LittleRequestMapping requestMapping = method.getAnnotation(LittleRequestMapping.class);
-                    final String urlPath = normalize(requestMapping.value());
+                    String urlPath = requestMapping.value();
+                    if (!urlPath.endsWith("/")) {
+                    	urlPath += "/";
+                    }
                     final RequestMethod[] reqMethods = requestMapping.method();
                     for (RequestMethod rm : reqMethods) {
                         System.out.println("定位到请求映射方法"+urlPath+"("+rm.name()+")->"+method.getName());

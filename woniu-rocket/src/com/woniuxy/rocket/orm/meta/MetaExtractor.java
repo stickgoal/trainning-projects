@@ -53,8 +53,9 @@ public class MetaExtractor {
 	                columnNameMapping.put(columnAnno.columnName(),cm);
 
 	               if (field.isAnnotationPresent(Id.class)) {
+	            	   Id id = field.getAnnotation(Id.class);
 	                   cm.setPk(true);
-
+	                   cm.setPkAuto(id.auto());
 	                   mapping.setPkName(columnAnno.columnName());
 	                   mapping.setPkType(field.getType());
 
